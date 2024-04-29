@@ -13,6 +13,7 @@
 		href="comments/feed/index.htm">
 
 		<link rel="website icon" type="png " href="wp-content/uploads/sites/185/2021/10/change/lara.png" />
+        
 
 	<script>
 		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/templatekit.jegtheme.com\/findive\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1" } };

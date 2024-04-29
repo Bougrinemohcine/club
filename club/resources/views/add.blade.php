@@ -5,11 +5,11 @@
 @section('content')
 <h2>Connecté en tant qu'administrateur! </h2>
 <div class="container" id="container">
-	
+
 	<div class="form-container sign-in-container">
     <form method="POST" action="{{ route('admin.login') }}">
 	@csrf
-	
+
 
 			<h1>Se connecter</h1>
 			<br><br><br><br>
@@ -19,7 +19,7 @@
 			<a href="#">Mot de passe oublié?</a>
 			<button type="submit">Se connecter</button>
 
-			
+
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -31,6 +31,7 @@
 				<h1>Bonjour </h1>
                 <a href="/login">Connecté en tant qu'adhérent !</a>
 				<p>welcome</p>
+                <button style="background-color: white !important;"><a href="{{route('home')}}" style=" color:#222; cursor:pointer">Go back to home</a></button>
 			</div>
 		</div>
 	</div>
@@ -38,7 +39,7 @@
 
 
 <style>
-	
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
@@ -132,7 +133,7 @@ input {
 .container {
 	background-color: black;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
@@ -177,7 +178,7 @@ input {
 		opacity: 0;
 		z-index: 1;
 	}
-	
+
 	50%, 100% {
 		opacity: 1;
 		z-index: 5;

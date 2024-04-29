@@ -3,11 +3,11 @@
 @section('content')
 <h2>Club Asaam Bienvenue</h2>
 <div class="container" id="container">
-	
+
 	<div class="form-container sign-in-container">
 	<form  method="POST" action="{{ route('test_me') }}">
 	@csrf
-	
+
 
 			<h1>Se connecter</h1>
 			<br><br><br><br>
@@ -16,9 +16,9 @@
 			<input id="email" type="email"  name="email"  placeholder="exemple@gmail.com" required autocomplete="email" />
 			<input type="text" name="random_code" id="random_code" placeholder="00000" required>
 			<a href="#">Mot de passe oublié?</a>
-			<button type="submit">Se connecter</button>
+			<button type="submit" style="cursor:pointer">Se connecter</button>
 
-			
+
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -30,6 +30,7 @@
 				<h1>Bonjour, Adhérent</h1>
                 <a href="/add">Connecté en tant qu'administrateur!</a>
 				<p>welcome</p>
+                <button style="background-color: white !important;"><a href="{{route('home')}}" style=" color:#222; cursor:pointer">Go back to home</a></button>
 			</div>
 		</div>
 	</div>
@@ -37,7 +38,7 @@
 
 
 <style>
-	
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
@@ -131,7 +132,7 @@ input {
 .container {
 	background-color: black;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
@@ -176,7 +177,7 @@ input {
 		opacity: 0;
 		z-index: 1;
 	}
-	
+
 	50%, 100% {
 		opacity: 1;
 		z-index: 5;
