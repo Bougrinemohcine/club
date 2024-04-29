@@ -3,7 +3,7 @@
 
 
 @section('content')
-<h2>Connecté en tant qu'administrateur! </h2>
+<h2>S’inscrire en tant qu'administrateur! </h2>
 <div class="container" id="container">
 
 	<div class="form-container sign-in-container">
@@ -11,16 +11,16 @@
 	@csrf
 
 
-			<h1>Se connecter</h1>
+			<h1>S’inscrire</h1>
 			<br><br><br><br>
-			<span>utiliser votre compte</span>
+			<span>C’est rapide et facile.</span>
             <input id="email" type="email"  name="email"  required autocomplete="email"    placeholder="exemple@gmail.com"  autofocus>
             <input type="password" name="password" id="password" required>
             <div class="d-flex" style="margin: 10px">
                 <a href="#">Mot de passe oublié?</a>
-                <a href="{{route('addAdminShow')}}" style="color: #3c97bf">crée un compte</a>
+                <a href="/add" style="color: #3c97bf">dèja tu as un compte?</a>
             </div>
-                <button type="submit">Se connecter</button>
+                <button type="submit">S’inscrire</button>
 		</form>
 	</div>
 	<div class="overlay-container">

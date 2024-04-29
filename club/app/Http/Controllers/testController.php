@@ -41,4 +41,8 @@ class testController extends Controller
 
         return redirect()->route('test')->with('success', 'Utilisateur mis à jour avec succès');
     }
+
+    public function addAdminShow(){
+        return view('addAdmin');
+    }
 }
