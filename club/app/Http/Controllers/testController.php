@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\isadmin;
+use App\Models\utilisateur;
 use App\Models\adherentuser;
 use Illuminate\Http\Request;
-use App\Models\utilisateur;
 
 class testController extends Controller
 {
@@ -44,5 +45,22 @@ class testController extends Controller
 
     public function addAdminShow(){
         return view('addAdmin');
+    }
+    public function register(Request $request)
+    {
+        // Validate the request
+        $request->validate([
+            'email' => 'required|email|unique:admins',
+            'password' => 'required|min:6',
+        ]);
+
+        // Create a new admin
+        isadmin::create([
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
+        // Redirect after registration
+        return redirect()->route('admin.login')->with('success', 'Admin created successfully!');
     }
 }

@@ -7,7 +7,7 @@
 <div class="container" id="container">
 
 	<div class="form-container sign-in-container">
-    <form method="POST" action="{{ route('admin.login') }}">
+    <form method="POST" action="{{ route('admin.register.post') }}">
 	@csrf
 
 

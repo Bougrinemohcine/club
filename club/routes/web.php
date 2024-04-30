@@ -149,6 +149,7 @@ Route::get('/acceptance', function () {
 });
 
 
+Route::post('/admin/register', [testController::class, 'register'])->name('admin.register.post');
 Route::get('/addAdmin',[testController::class,'addAdminShow'])->name('addAdminShow');
 Route::delete('/utilisateurs/{user}', [testController::class, 'destroy'])->name('utilisateurs.destroy');
 Route::get('/utilisateurs/{user}/edit', [testController::class, 'edit'])->name('utilisateurs.edit');
