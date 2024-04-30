@@ -31,7 +31,13 @@ class LoginController extends Controller
     if (isset($user)) {
         // Authentication successful
         // You can perform additional actions here, such as redirecting to the profile page or creating a user session
-        return view("profile");
+        $userName = $user->nom;
+        $userPrenom = $user->prenom;
+        $userville = $user->ville;
+        $usercin = $user->cin;
+        $usercarte = $user->carte;
+        $useremail = $user->email;
+        return view("profile",compact('userName','userPrenom','userville','usercin','usercarte','useremail'));
     }
 
     // Authentication failed
@@ -52,6 +58,7 @@ public function adminLogin(Request $request)
         ->first();
 
     if (isset($user)) {
+
         // Authentication successful
         // You can perform additional actions here, such as redirecting to the profile page or creating a user session
         return redirect('admin');
