@@ -77,7 +77,7 @@ public function logout()
     // Déconnecter l'utilisateur
     session()->forget('user_id');
 
-    return view("login");
+    return redirect("/");
 }
 
 }

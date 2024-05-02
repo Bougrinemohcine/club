@@ -157,8 +157,7 @@ Route::put('/utilisateurs/{user}', [testController::class, 'update'])->name('uti
 
 
 
-
-Route::post('/login', [LoginController::class, 'authenticate'])->name("test_me");
+Route::post('/profileadh', [LoginController::class, 'authenticate'])->name("test_me");
 Route::post('/add', [LoginController::class, 'adminLogin'])->name('admin.login');
 
 Route::get('/emial', [LoginController::class, 'logout'])->name('logout');
@@ -167,12 +166,12 @@ Route::get('/emial', [LoginController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/profile', function () {
-    return view('profile')->name("profile");
-});
+// Route::get('/profile', function () {
+//     return view('profile')->name("profile");
+// });
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 Route::get('/add', function () {
     return view('add');
 });

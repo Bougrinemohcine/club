@@ -1478,7 +1478,7 @@
 										<li id="menu-item-1440"
 									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1440">
 									<a href="./contact/index" ><b>Contact</b></a></li>
-									<button id="login"><a href="{{route('test_me')}}" >connecter</button></a>
+									<button id="login"><a href="{{route('login')}}" >connecter</button></a>
 
 									</ul>
 
