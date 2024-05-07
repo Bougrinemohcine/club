@@ -74,49 +74,49 @@ Route::delete('/emails/ins/{id}', function ($id) {
 
 
 
+// Route::get('/emails/accept/{id}', function ($id) {
+//     $adhe = adherent::find($id);
+
+//     // Generate a random number
+//     $randomNumber = mt_rand(10000, 99999); // Adjust the range of the random number as per your requirement
+
+//     // Send the email with the random number
+//     Mail::to($adhe->email)->send(new accepte($randomNumber));
+
+//     // Delete the adherent
+//     $adhe->delete();
+
+//     $exist = utilisateur::where('email', $adhe->email)->first();
+
+//     if (!$exist) {
+//         $user = new utilisateur;
+//         $user->nom = $adhe->nom;
+//         $user->prenom = $adhe->prenom;
+//         $user->ville = $adhe->ville;
+//         $user->telephone = $adhe->telephone;
+//         $user->cin = $adhe->cin;
+//         $user->carte = $adhe->carte;
+//         $user->email = $adhe->email;
+//         $user->random_code = $randomNumber;
+
+
+
+//         $user->save();
+//     }
+
+//     return redirect('admin')->with('mssg', 'Utilisateur supprimé');
+// })->name('send.email.and.accept');
+
+
+
 Route::get('/emails/accept/{id}', function ($id) {
     $adhe = adherent::find($id);
-
-    // Generate a random number
-    $randomNumber = mt_rand(10000, 99999); // Adjust the range of the random number as per your requirement
-
-    // Send the email with the random number
-    Mail::to($adhe->email)->send(new accepte($randomNumber));
-
-    // Delete the adherent
-    $adhe->delete();
-
-    $exist = utilisateur::where('email', $adhe->email)->first();
-
-    if (!$exist) {
-        $user = new utilisateur;
-        $user->nom = $adhe->nom;
-        $user->prenom = $adhe->prenom;
-        $user->ville = $adhe->ville;
-        $user->telephone = $adhe->telephone;
-        $user->cin = $adhe->cin;
-        $user->carte = $adhe->carte;
-        $user->email = $adhe->email;
-        $user->random_code = $randomNumber;
-
-
-
-        $user->save();
-    }
-
-    return redirect('admin')->with('mssg', 'Utilisateur supprimé');
-})->name('send.email.and.accept');
-
-
-
-Route::get('/emails/accept/{id}', function ($id) {
-    $adhe = adherent::find($id);
-
+    $email01 = $adhe->email;
 
     $randomNumber = mt_rand(10000, 99999);
 
     // Send the email with the random number
-    Mail::to($adhe->email)->send(new accepte($randomNumber));
+    Mail::to($adhe->email)->send(new accepte($randomNumber,$email01));
 
     // Delete the adherent
     $adhe->delete();
@@ -135,6 +135,7 @@ Route::get('/emails/accept/{id}', function ($id) {
 
     return redirect('admin')->with('mssg', 'Utilisateur supprimé');
 })->name('send.email.and.accept');
+
 
 
 Route::get('/test', [App\Http\Controllers\testController::class, 'index'])->name('test');

@@ -16,6 +16,7 @@ class accepte extends Mailable
     use Queueable, SerializesModels;
 
     public $randomNumber;
+    public $email01;
 
     /**
      * Create a new message instance.
@@ -23,9 +24,10 @@ class accepte extends Mailable
      * @param  int  $randomNumber
      * @return void
      */
-    public function __construct($randomNumber)
+    public function __construct($randomNumber, $email01)
     {
         $this->randomNumber = $randomNumber;
+        $this->email01 = $email01;
     }
 
     /**
@@ -37,6 +39,7 @@ class accepte extends Mailable
     {
         return $this->view('emails.accep')
                     ->with('randomNumber', $this->randomNumber)
+                    ->with('email01', $this->email01)
                     ->subject('Club Assam ');
     }
 }
